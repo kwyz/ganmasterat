@@ -1,0 +1,12 @@
+<v-col cols="4">
+    <v-row class="grey lighten-5">
+        <v-card class="ma-3 pa-6" outlined tile width="512" height="512">
+            <div id="canvas-wrapper">
+                <canvas id="image_canvas" width="460" height="460"></canvas>
+            </div>
+        </v-card>
+    </v-row>
+    <v-btn v-if="imageExist" color="primary" @click="fixSize_64x64()">
+        Transformă în {{model_description}}
+    </v-btn>
+</v-col>

@@ -1,28 +1,38 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<v-app>
+    <v-app-bar app color="dark-grey" dark  class="text-center">
+        <h2 class="text-center text-uppercase col-12">
+            Rețea neurală competitiv-generativă
+        </h2>
+    </v-app-bar>
+    <v-content>
+      <v-container>
+        <v-row justify="center">
+          <v-col cols="12">
+          </v-col>
+        </v-row>
+      </v-container>
+        <v-container>
+            <v-row justify="center"> 
+                <Canvas/>
+                <Controll/>
+            </v-row>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    HelloWorld
-  }
-}
-</script>
+    Canvas: () => import("@/components/Canvas/Index.vue"),
+    Controll: () => import("@/components/Controll/Index.vue"),
+  },
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>

@@ -1,0 +1,37 @@
+<v-col cols="4">
+    <v-row justify="start">
+        <v-col class="text-left">
+            <h3 class="text-uppercase">
+                Modelul
+            </h3>
+        </v-col>
+    </v-row>
+    <v-row justify="start">
+        <v-col class="text-left">
+            <v-select :items="items" v-model="ganModel" default="DCGAN-64" label="Selectați unul dintre modele ">
+            </v-select>
+        </v-col>
+    </v-row>
+    <v-row justify="space-around">
+        <v-col class="text-left d-flex my-2" v-if="ganModel" transition="scale-transition">
+            <v-btn color="primary" class="mr-1" @click="generateImage()" :disabled="disabled" :loading="disabled">
+                Gererează imaginea
+                <template v-slot:loader>
+                    <span>
+                        Așteptați...
+                    </span>
+                </template>
+            </v-btn>
+        </v-col>
+        <v-col class=" d-flex my-2 justify-end " v-if="ganModel " transition="scale-transition ">
+            <v-btn color="primary" @click="animateImage()" :disabled="disabled" :loading="disabled">
+                Animează imaginea
+                <template v-slot:loader>
+                    <span>
+                        Așteptați...
+                    </span>
+                </template>
+            </v-btn>
+        </v-col>
+    </v-row>
+</v-col>
