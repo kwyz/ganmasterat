@@ -60,10 +60,8 @@ export default {
             let model_size = model_info.model_size,
                 model_url = model_info.model_url,
                 draw_multiplier = model_info.draw_multiplier;
-
             this.model_description = model_info.description;
             this.computing_prep_canvas(model_size * draw_multiplier);
-
             if (this.currentModelName in this.model_promise_cache) {
                 this.model_promise = this.model_promise_cache[this.currentModelName];
             } else {
@@ -136,7 +134,6 @@ export default {
             const inputShape = model.inputs[0].shape.slice(1);
             const shift = tf.randomNormal(inputShape).expandDims(0);
             const freq = tf.randomNormal(inputShape, 0, 0.1).expandDims(0);
-
             let c = document.getElementById("image_canvas");
             let i = 0;
             while (i < animate_frame) {
